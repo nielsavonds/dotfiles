@@ -1,12 +1,35 @@
-time_out () { perl -e 'alarm shift; exec @ARGV' "$@"; }
 
 # Run tmux if exists
 if command -v tmux>/dev/null; then
-	[ -z $TMUX ] && exec tmux
+
+  # Check if we are inside TMUX
+  if [ -z $TMUX ]; then
+
+    SESSIONS=`tmux ls 2>/dev/null | grep -v attached`
+
+    if [ ! -z $SESSIONS ]; then
+
+      echo "$SESSIONS"
+      read "?Resume session? " tmux_session
+
+    fi
+
+    if [ -z $tmux_session ]; then
+
+      exec tmux
+
+    else
+
+      exec tmux a -t $tmux_session
+
+    fi
+  fi
+
 else 
 	echo "tmux not installed. Run ./deploy to configure dependencies"
 fi
 
+# Pull latest configuration daily
 LASTPULL=`cat ~/dotfiles/.lastpull || echo "0"`
 SHOULDPULL=`date -d "-1 day" +%s`
 
