@@ -30,3 +30,6 @@
 	}
 	zle -N add_sudo
 	bindkey "^s" add_sudo
+
+# Ctrl+u, only kill what's before the cursor
+	bindkey \^U backward-kill-line
