@@ -7,7 +7,13 @@ else
 	echo "tmux not installed. Run ./deploy to configure dependencies"
 fi
 
-echo "Updating configuration"
-#(cd ~/dotfiles && time_out 3 git pull && time_out 3 git submodule update --init --recursive)
-(cd ~/dotfiles && git pull && git submodule update --init --recursive)
+LASTPULL=`cat ~/dotfiles/.lastpull || echo "0"`
+SHOULDPULL=`date -d "-1 day" +%s`
+
+if [ $LASTPULL -lt $SHOULDPULL ]; then
+  echo "Updating configuration"
+  (cd ~/dotfiles && git pull && git submodule update --init --recursive)
+
+  date +%s > ~/dotfiles/.lastpull
+fi
 source ~/dotfiles/zsh/zshrc.sh
