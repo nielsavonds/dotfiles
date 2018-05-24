@@ -30,13 +30,6 @@ source ~/dotfiles/zsh/plugins/fixls.zsh
 		done;
 	}
 
-	# Custom cd
-	c() {
-		cd $1;
-		ls -l;
-	}
-	alias cd="c"
-
 # For vim mappings: 
 	stty -ixon
 
