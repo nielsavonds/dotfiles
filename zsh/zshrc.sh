@@ -33,7 +33,7 @@ source ~/dotfiles/zsh/plugins/fixls.zsh
 	# Custom cd
 	c() {
 		cd $1;
-		ls;
+		ls -l;
 	}
 	alias cd="c"
 
@@ -43,7 +43,6 @@ source ~/dotfiles/zsh/plugins/fixls.zsh
 source ~/dotfiles/zsh/plugins/oh-my-zsh/lib/history.zsh
 source ~/dotfiles/zsh/plugins/oh-my-zsh/lib/key-bindings.zsh
 source ~/dotfiles/zsh/plugins/oh-my-zsh/lib/completion.zsh
-source ~/dotfiles/zsh/plugins/vi-mode.plugin.zsh
 source ~/dotfiles/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/dotfiles/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/dotfiles/zsh/keybindings.sh
