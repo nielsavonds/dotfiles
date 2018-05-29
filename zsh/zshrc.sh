@@ -42,3 +42,6 @@ setopt noautomenu
 setopt nomenucomplete
 
 source ~/dotfiles/zsh/prompt.sh
+
+# Enable 'command not found, install package' style completion
+source /etc/zsh_command_not_found
