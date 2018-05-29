@@ -5,6 +5,9 @@ if command -v tmux>/dev/null; then
   # Check if we are inside TMUX
   if [ -z $TMUX ]; then
 
+    # Start server first. This triggers continuum restore, so we get asked about the sessions correctly
+    tmux start-server
+
     SESSIONS=`tmux ls 2>/dev/null | grep -v attached`
 
     if [ ! -z $SESSIONS ]; then
