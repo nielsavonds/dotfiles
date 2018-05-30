@@ -48,3 +48,7 @@ source ~/dotfiles/zsh/prompt.sh
 
 # Enable 'command not found, install package' style completion
 source /etc/zsh_command_not_found
+
+# Allow us to reload .zshrc in all terminals by running reload_zshrc
+trap "source ~/.zshrc && rehash" USR1
+alias reload_zshrc="killall -u $(whoami) -s USR1 zsh && echo 'zshrc sourced' && sleep 1"
