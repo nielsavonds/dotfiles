@@ -37,6 +37,9 @@ if [[ "${terminfo[kcud1]}" != "" ]]; then
 	bindkey "${terminfo[kcud1]}" down-line-or-beginning-search
 fi
 
+# Don't share history between terminals
+unsetopt share_history
+
 # Don't cycle through all tab-complete options. Instead just show the list
 setopt noautomenu
 setopt nomenucomplete
