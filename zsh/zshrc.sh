@@ -40,10 +40,14 @@ fi
 # Don't share history between terminals
 unsetopt share_history
 
+# Don't ignore expressions that have no match. This is annoying when dealing with e.g. remote files
+setopt +o nomatch
+
 # Don't cycle through all tab-complete options. Instead just show the list
 setopt noautomenu
 setopt nomenucomplete
 
+source ~/dotfiles/zsh/aliases.sh
 source ~/dotfiles/zsh/prompt.sh
 
 # Enable 'command not found, install package' style completion
