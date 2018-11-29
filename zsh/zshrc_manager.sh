@@ -8,24 +8,8 @@ if command -v tmux>/dev/null; then
     # Start server first. This triggers continuum restore, so we get asked about the sessions correctly
     tmux start-server
 
-    SESSIONS=`tmux ls 2>/dev/null | grep -v attached`
-
-    if [ ! -z $SESSIONS ]; then
-
-      echo "$SESSIONS"
-      read "?Resume session? " tmux_session
-
-    fi
-
-    if [ -z $tmux_session ]; then
-
-      exec tmux
-
-    else
-
-      exec tmux a -t $tmux_session
-
-    fi
+    # Open a new tmux shell
+    exec tmux
   fi
 
 else 

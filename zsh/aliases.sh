@@ -1,0 +1,1 @@
+alias tss="~/dotfiles/zsh/tmux_switch_session.sh"
