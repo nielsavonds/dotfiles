@@ -3,7 +3,7 @@
 SESSION_FILE=/tmp/tmux_chosen_session
 
 rm -f $SESSION_FILE
-tmux choose-session "run-shell 'echo '%%' > $SESSION_FILE'"
+tmux choose-session -N "run-shell 'echo '%%' > $SESSION_FILE'"
 
 while [[ ! -a $SESSION_FILE ]]
 do
