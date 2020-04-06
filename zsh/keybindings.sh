@@ -33,3 +33,8 @@
 
 # Ctrl+u, only kill what's before the cursor
 	bindkey \^U backward-kill-line
+
+	function setgov ()
+	{
+	    echo "$1" | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor 
+	}
