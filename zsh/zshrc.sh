@@ -14,11 +14,17 @@
 # Settings
 	export VISUAL=vim
 
+mkdir -p ~/.zsh_cache
+ZSH_CACHE_DIR=~/.zsh_cache
+
 source ~/dotfiles/zsh/plugins/fixls.zsh
 
 source ~/dotfiles/zsh/plugins/oh-my-zsh/lib/history.zsh
 source ~/dotfiles/zsh/plugins/oh-my-zsh/lib/key-bindings.zsh
 source ~/dotfiles/zsh/plugins/oh-my-zsh/lib/completion.zsh
+source ~/dotfiles/zsh/plugins/oh-my-zsh/lib/history.zsh
+source ~/dotfiles/zsh/plugins/oh-my-zsh/plugins/kubectl/kubectl.plugin.zsh
+source ~/dotfiles/zsh/plugins/oh-my-zsh/plugins/helm/helm.plugin.zsh
 source ~/dotfiles/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/dotfiles/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/dotfiles/zsh/keybindings.sh
