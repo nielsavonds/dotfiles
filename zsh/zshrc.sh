@@ -11,11 +11,15 @@
 	# This is currently causing problems (fails when you run it anywhere that isn't a git project's root directory)
 	# alias vs="v `git status --porcelain | sed -ne 's/^ M //p'`"
 
+	alias nd="notify-send \"DONE\""
+
 # Settings
 	export VISUAL=vim
 
 mkdir -p ~/.zsh_cache
 ZSH_CACHE_DIR=~/.zsh_cache
+
+bgnotify_threshold=0
 
 source ~/dotfiles/zsh/plugins/fixls.zsh
 
@@ -25,6 +29,7 @@ source ~/dotfiles/zsh/plugins/oh-my-zsh/lib/completion.zsh
 source ~/dotfiles/zsh/plugins/oh-my-zsh/lib/history.zsh
 source ~/dotfiles/zsh/plugins/oh-my-zsh/plugins/kubectl/kubectl.plugin.zsh
 source ~/dotfiles/zsh/plugins/oh-my-zsh/plugins/helm/helm.plugin.zsh
+source ~/dotfiles/zsh/plugins/oh-my-zsh/plugins/bgnotify/bgnotify.plugin.zsh
 source ~/dotfiles/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/dotfiles/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/dotfiles/zsh/keybindings.sh
@@ -62,3 +67,10 @@ source /etc/zsh_command_not_found
 # Allow us to reload .zshrc in all terminals by running reload_zshrc
 trap "source ~/.zshrc && rehash" USR1
 alias reload_zshrc="killall -u $(whoami) -s USR1 zsh && echo 'zshrc sourced' && sleep 1"
+
+# Add bindings for ReactNative
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
