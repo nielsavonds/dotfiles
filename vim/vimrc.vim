@@ -3,6 +3,7 @@
 	let mapleader=","
 	set autoindent
 	set tabstop=4
+	set expandtab
 	set shiftwidth=4
 	set dir=/tmp/
 	set relativenumber 

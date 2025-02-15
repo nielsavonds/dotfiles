@@ -76,4 +76,8 @@ export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$HOME/.rvm/bin
 export PATH=$PATH:$HOME/go/bin
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export GOPRIVATE="github.com/mankindart,bitbucket.org/nobilife"
+
+# Add github copilot CLI aliases
+eval "$(github-copilot-cli alias -- "$0")"

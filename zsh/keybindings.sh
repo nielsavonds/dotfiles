@@ -6,14 +6,14 @@
 	zle -N up_widget
 	bindkey "^j" up_widget
 
-# home
-	function goto_home() { 
-		BUFFER="cd ~/"$BUFFER
-		zle end-of-line
-		zle accept-line
-	}
-	zle -N goto_home
-	bindkey "^h" goto_home
+# # home
+# 	function goto_home() { 
+# 		BUFFER="cd ~/"$BUFFER
+# 		zle end-of-line
+# 		zle accept-line
+# 	}
+# 	zle -N goto_home
+# 	bindkey "^h" goto_home
 
 # LS
 	function ctrl_l() {
